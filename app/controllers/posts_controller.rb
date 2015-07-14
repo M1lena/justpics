@@ -10,11 +10,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.new(post_params)
+    @post.save
     redirect_to '/'
   end
 
+  def new
+    @post = Post.new
+  end
+
   def post_params
-    params.require(:post).permit(:caption)
+    params.require(:post).permit(:caption, :image)
   end
 end

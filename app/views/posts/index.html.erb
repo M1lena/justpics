@@ -1,7 +1,8 @@
 
 <% if @post.any? %>
   <% @post.each do |post| %>
-    <p><%= post.caption %></p>
+    <br><%= image_tag post.image.url(:medium)%>
+    <br><p><%= post.caption %></p>
   <% end %>
 <% else %>
   <p> no posts  yet </p>
