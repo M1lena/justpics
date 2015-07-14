@@ -1,3 +1,11 @@
-no posts yet
 
-<br><a href='#'>add a post</a>
+<% if @post.any? %>
+  <% @post.each do |post| %>
+    <br><%= image_tag post.image.url(:medium)%>
+    <br><p><%= post.caption %></p>
+  <% end %>
+<% else %>
+  <p> no posts  yet </p>
+<% end %>
+
+<br><a href=posts/new>add a post </a>
